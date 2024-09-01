@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: aqua;
+            }
+            div{
+                text-align: center;
+                padding-top:150px;
+                color:green;
+            }
+            input{
+                margin-top:10px;
+                border-radius:5px;
+                height: 20px;
+               
+            }
+            select{
+                margin-top:10px;
+            }
+            textarea{
+                margin-top:10px;
+            }
+        </style>
+    
+    </head>
+    <body>
+        <div>
+            <h1>Personal Information Form</h1>
+            <form> 
+
+                Name : <input type="text" id="name"/>
+                <br/>
+                Password : <input type="password" id="name"/>
+                <br/>
+                Gender:  Male <input type="radio" name="gender"/> Female <input type="radio" name="gender"/>
+                <br/>
+                Hobbies :   Football <input type="checkbox" name="hobbies" value="football"/> 
+                            wWatching TV <input type="checkbox" name="hobbies" value="football"/> 
+                            Volly Balll <input type="checkbox" name="hobbies" value="football"/> 
+                            Reading <input type="checkbox" name="hobbies" value="football"/> 
+    
+                <br/>
+                Your Education :
+                <select name="education">
+                    <option>MBA</option>
+                    <option>BCS</option>
+                    <option>BBA</option>
+                    <option>LLB</option>
+                </select>
+                <br/>
+                Your Comment : <textarea cols="40" rows="10"></textarea> 
+            </form>
+        </div>
+
+        <script>
+            function Submit(e){
+                e.preventDefault();
+            }
+        </script>
+    </body>
+</html>
