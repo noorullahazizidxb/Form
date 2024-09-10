@@ -27,35 +27,68 @@
     <body>
         <div>
             <h1>Personal Information Form</h1>
-            <form> 
+            <form onsubmit="Submit(event)"> 
 
                 Name : <input type="text" id="name"/>
                 <br/>
-                Password : <input type="password" id="name"/>
+                Password : <input type="password" id="pass"/>
                 <br/>
-                Gender:  Male <input type="radio" name="gender"/> Female <input type="radio" name="gender"/>
+                Gender:  Male <input type="radio" name="gender" value="Male"/> Female <input type="radio" value="Female" name="gender"/>
                 <br/>
                 Hobbies :   Football <input type="checkbox" name="hobbies" value="football"/> 
-                            wWatching TV <input type="checkbox" name="hobbies" value="football"/> 
-                            Volly Balll <input type="checkbox" name="hobbies" value="football"/> 
-                            Reading <input type="checkbox" name="hobbies" value="football"/> 
+                            wWatching TV <input type="checkbox" name="hobbies" value="watching tv"/> 
+                            Volly Balll <input type="checkbox" name="hobbies" value="animals"/> 
+                            soccer <input type="checkbox" name="hobbies" value="soccer"/> 
     
                 <br/>
                 Your Education :
-                <select name="education">
-                    <option>MBA</option>
-                    <option>BCS</option>
-                    <option>BBA</option>
-                    <option>LLB</option>
+                <select id="education">
+                    <option value="Mba">MBA</option>
+                    <option  value="BCS" selected="true">BCS</option>
+                    <option  value="BBA">BBA</option>
+                    <option  value="LLB">LLB</option>
                 </select>
                 <br/>
-                Your Comment : <textarea cols="40" rows="10"></textarea> 
+                Your Comment : <textarea id="textarea" cols="40" rows="10"></textarea> 
+                <button type="submit">Submit</button>
+
             </form>
         </div>
 
         <script>
-            function Submit(e){
-                e.preventDefault();
+            function Submit(y){
+                y.preventDefault();
+               
+                var name=document.getElementById('name').value;
+                var password=document.getElementById('pass').value;
+                var gender=document.getElementsByName('gender');
+                
+                console.log(name);
+                console.log(password);
+                for(i=0;i<gender.length;i++){
+              if(gender[i].checked==true){
+                console.log(gender[i].value);
+              }
+                }
+              // var educations=document.getElementsByName('education');
+               var e = document.getElementById("education");
+                var value = e.value;
+                var text = e.options[e.selectedIndex].text;
+                console.log(text);
+                console.log(value);
+                var textarea=document.getElementById('textarea').value;
+
+                console.log(textarea);
+
+
+                var hobbies=document.getElementsByName('hobbies');
+                
+                for(i=0;i<hobbies.length;i++){
+                    if(hobbies[i].checked==true){
+                        console.log(hobbies[i].value)
+                    }
+                }
+             
             }
         </script>
     </body>
